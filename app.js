@@ -1,18 +1,31 @@
 // =========================================
-// Villa Contabilidade — Comparador SINTEGRA × XML
-// (UTF-8)
+// Villa Contabilidade — Comparador SINTEGRA × XML (UTF-8)
 // =========================================
 
-// --------- COLAR A SUA IMAGEM AQUI (data URL completo!) ----------
+// 1) COLE A SUA IMAGEM (favicon/logo) AQUI — data URL COMPLETO:
 const BRAND_DATA_URL =
-  "data:image/png;base64,iVBORw0K..."; // ← troque pelo data URL COMPLETO que você enviou
+  "data:image/png;base64,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"; // ← troque pelo seu data URL gigante
 
-// ---------- Helpers de UI ----------
+// ---------- Helpers ----------
 const $ = (id) => document.getElementById(id);
+const digits = (s) => (s || "").replace(/\D+/g, "");
+const pad = (n, l = 2) => String(n).padStart(l, "0");
+const toYMD = (dstr) => {
+  if (!dstr) return "";
+  const t = String(dstr);
+  const iso = t.match(/^(\d{4})-?(\d{2})-?(\d{2})/);
+  if (iso) return `${iso[1]}${iso[2]}${iso[3]}`;
+  const br = t.match(/^(\d{2})[\/\-](\d{2})[\/\-](\d{4})/);
+  if (br) return `${br[3]}${br[2]}${br[1]}`;
+  const ymd = t.match(/^(\d{8})$/);
+  if (ymd) return ymd[1];
+  return "";
+};
+const ymdToBR = (ymd) => (ymd && ymd.length === 8) ? `${ymd.slice(6,8)}/${ymd.slice(4,6)}/${ymd.slice(0,4)}` : ymd || "";
 const moneyBR = (v) => {
   if (v == null || v === "") return "";
   const n = Number(String(v).replace(/\./g, "").replace(",", "."));
-  return Number.isFinite(n) ? n.toLocaleString("pt-BR", { style: "currency", currency: "BRL" }) : String(v);
+  return Number.isFinite(n) ? n.toLocaleString("pt-BR",{style:"currency",currency:"BRL"}) : String(v);
 };
 const parseNumberBR = (s) => {
   if (!s) return null;
@@ -20,348 +33,382 @@ const parseNumberBR = (s) => {
   const n = Number(t);
   return Number.isFinite(n) ? n : null;
 };
-const digits = (s) => (s || "").replace(/\D+/g, "");
-const pad = (n, l = 2) => String(n).padStart(l, "0");
-const toYMD = (d) => {
-  if (!d) return "";
-  const m = String(d).match(/^(\d{4})-?(\d{2})-?(\d{2})/);
-  return m ? `${m[1]}${m[2]}${m[3]}` : "";
-};
-const ymdToBR = (ymd) => (ymd && ymd.length === 8 ? `${ymd.slice(6, 8)}/${ymd.slice(4, 6)}/${ymd.slice(0, 4)}` : ymd || "");
-const normSerie = (s) => (digits(s) ? String(Number(digits(s))) : "");
-const normNF = (n) => (digits(n) ? String(Number(digits(n))) : "");
-const sameValue = (a, b, tol = 0.02) => {
+const sameValue = (a, b, tol = 0.05) => {
   const na = parseNumberBR(a), nb = parseNumberBR(b);
   if (!Number.isFinite(na) || !Number.isFinite(nb)) return String(a) === String(b);
   return Math.abs(na - nb) <= tol;
 };
 const tableFromRows = (header, rows) => {
-  const thead = `<thead><tr>${header.map(h => `<th>${h}</th>`).join("")}</tr></thead>`;
+  const thead = `<thead><tr>${header.map(h=>`<th>${h}</th>`).join("")}</tr></thead>`;
   const tbody = `<tbody>${
-    rows.length
-      ? rows.map(r => `<tr>${r.map(c => `<td>${c ?? ""}</td>`).join("")}</tr>`).join("")
-      : `<tr><td colspan="${header.length}">Sem registros.</td></tr>`
+    rows.length ? rows.map(r=>`<tr>${r.map(c=>`<td>${c ?? ""}</td>`).join("")}</tr>`).join("")
+                : `<tr><td colspan="${header.length}">Sem registros.</td></tr>`
   }</tbody>`;
   return `<div class="table-wrap"><table>${thead}${tbody}</table></div>`;
 };
 
-// ---------- Branding dinâmico ----------
-function setBranding() {
-  const fav = $("dynamic-favicon");
-  const logo = $("brandLogo");
+// ---------- Branding ----------
+function setBranding(){
+  const fav = $("dynamic-favicon"), logo = $("brandLogo");
   if (fav && BRAND_DATA_URL) fav.href = BRAND_DATA_URL;
   if (logo && BRAND_DATA_URL) logo.src = BRAND_DATA_URL;
 }
 
-// ---------- Upload UX (animação, nomes, reticências) ----------
+// ---------- Upload UI (arrastra-e-solta com reticências) ----------
 function wireUploadUI(labelEl, inputEl, titulo) {
-  function refresh() {
+  const refresh = () => {
     const span = labelEl.querySelector("span");
     const files = Array.from(inputEl.files || []);
-    if (!span) return;
     if (!files.length) {
       labelEl.classList.remove("filled");
       span.innerHTML = `<strong>${titulo}</strong><br><small>Arraste aqui ou clique</small>`;
       return;
     }
-    const first = files[0]?.name || "arquivo";
-    const tooltip = files.slice(0, 8).map(f => f.name).join("\n") + (files.length > 8 ? `\n+${files.length - 8} mais...` : "");
+    const first = files[0].name;
+    const tooltip = files.slice(0, 10).map(f=>f.name).join("\n") + (files.length>10?`\n+${files.length-10} mais...`:"");
     span.innerHTML = `
       <strong>${titulo}</strong><br>
-      <small>${files.length === 1 ? "1 arquivo" : files.length + " arquivos"}</small>
+      <small>${files.length===1? "1 arquivo": files.length+" arquivos"}</small>
       <div class="file-meta">
-        <span class="name" title="${tooltip.replace(/"/g, "&quot;")}" style="display:inline-block; max-width: 260px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">${first}</span>
-        ${files.length > 1 ? `<span class="count">+${files.length - 1}</span>` : ``}
-      </div>
-    `;
+        <span class="name" title="${tooltip.replace(/"/g,"&quot;")}"
+              style="display:inline-block;max-width:260px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">
+          ${first}
+        </span>
+        ${files.length>1?`<span class="count">+${files.length-1}</span>`:""}
+      </div>`;
     labelEl.classList.add("filled");
-  }
+  };
   inputEl.addEventListener("change", refresh);
-  ["dragenter", "dragover"].forEach(ev => {
-    labelEl.addEventListener(ev, e => { e.preventDefault(); labelEl.classList.add("dragover"); });
+  ["dragenter","dragover"].forEach(ev=>{
+    labelEl.addEventListener(ev, e=>{ e.preventDefault(); labelEl.classList.add("dragover"); });
   });
-  ["dragleave", "drop"].forEach(ev => {
-    labelEl.addEventListener(ev, e => { e.preventDefault(); labelEl.classList.remove("dragover"); });
+  ["dragleave","drop"].forEach(ev=>{
+    labelEl.addEventListener(ev, e=>{ e.preventDefault(); labelEl.classList.remove("dragover"); });
   });
-  labelEl.addEventListener("drop", e => {
+  labelEl.addEventListener("drop", e=>{
     e.preventDefault();
     const dt = e.dataTransfer;
     if (dt && dt.files && dt.files.length) {
-      inputEl.files = dt.files;
-      refresh();
+      inputEl.files = dt.files; refresh();
     }
   });
 }
 
 // =========================================
-// Leitura de XML (NF-e) e ZIPs com XML
+// XML + ZIP → NFe (modelo 55) + itens
 // =========================================
-function parseXML(text) { return new DOMParser().parseFromString(text, "text/xml"); }
-function byLocalNameAll(doc, name) {
+function parseXML(text){ return new DOMParser().parseFromString(text,"text/xml"); }
+function byName(doc, name){
   const all = doc.getElementsByTagName("*"); const out = [];
-  for (let i = 0; i < all.length; i++) if ((all[i].localName || all[i].nodeName) === name) out.push(all[i]);
+  for (let i=0;i<all.length;i++){ const n = all[i].localName || all[i].nodeName; if (n===name) out.push(all[i]); }
   return out;
 }
-function firstByLocalName(doc, name) { return byLocalNameAll(doc, name)[0] || null; }
-function findPathLocal(root, path) {
-  if (!root) return null;
-  let cur = root;
-  for (const seg of path) {
-    let found = null;
-    for (const ch of cur.children) if ((ch.localName || ch.nodeName) === seg) { found = ch; break; }
-    if (!found) return null;
-    cur = found;
+function first(doc, name){ return byName(doc, name)[0] || null; }
+function findPath(root, path){
+  if (!root) return null; let cur = root;
+  for (const seg of path){
+    let f=null; for (const ch of cur.children){ if ((ch.localName||ch.nodeName)===seg){ f=ch; break; } }
+    if (!f) return null; cur=f;
   }
   return cur;
 }
-function pickInfNFe(doc) {
-  const inf = firstByLocalName(doc, "infNFe");
-  if (inf) return inf;
-  const nfe = firstByLocalName(doc, "NFe");
-  if (nfe) return firstByLocalName(nfe, "infNFe") || nfe;
+function pickInfNFe(doc){
+  const inf = first(doc,"infNFe"); if (inf) return inf;
+  const nfe = first(doc,"NFe"); if (nfe) return first(nfe,"infNFe") || nfe;
   return doc.documentElement;
 }
-function getAccessKey(doc) {
-  const infProt = firstByLocalName(doc, "infProt");
-  if (infProt) {
-    const ch = findPathLocal(infProt, ["chNFe"]);
-    if (ch && ch.textContent) return digits(ch.textContent);
-  }
+function getAccessKey(doc){
+  const infProt = first(doc,"infProt");
+  if (infProt){ const ch = findPath(infProt,["chNFe"]); if (ch?.textContent) return digits(ch.textContent); }
   const inf = pickInfNFe(doc);
-  if (inf && inf.getAttribute && inf.getAttribute("Id")) {
-    const v = inf.getAttribute("Id");
-    if (v && v.toUpperCase().startsWith("NFE")) return digits(v);
-  }
+  const id = inf?.getAttribute?.("Id"); if (id && id.toUpperCase().startsWith("NFE")) return digits(id);
   return "";
 }
-function extractParty(inf, which) {
-  const base = which === "dest" ? "dest" : "emit";
-  const name = findPathLocal(inf, [base, "xNome"])?.textContent || "—";
-  const docn = findPathLocal(inf, [base, "CNPJ"]) || findPathLocal(inf, [base, "CPF"]);
+function extractParty(inf, which){
+  const base = which==="dest"?"dest":"emit";
+  const name = findPath(inf,[base,"xNome"])?.textContent || "—";
+  const docn = findPath(inf,[base,"CNPJ"]) || findPath(inf,[base,"CPF"]);
   const doc = digits(docn?.textContent || "");
-  const end = findPathLocal(inf, [base, "ender" + (base === "emit" ? "Emit" : "Dest")]);
-  const uf = (end ? findPathLocal(end, ["UF"])?.textContent : "" || "").trim().toUpperCase();
-  return { name, doc, uf };
+  const end = findPath(inf,[base, "ender"+(base==="emit"?"Emit":"Dest")]);
+  const uf = (end ? findPath(end,["UF"])?.textContent : "" || "").trim().toUpperCase();
+  return {name, doc, uf};
 }
-function extractItems(inf) {
-  const dets = byLocalNameAll(inf, "det");
-  const rows = [];
-  for (const d of dets) {
-    const prod = findPathLocal(d, ["prod"]); if (!prod) continue;
-    const xProd = findPathLocal(prod, ["xProd"])?.textContent || "";
-    const CFOP  = findPathLocal(prod, ["CFOP"])?.textContent || "";
-    const uCom  = findPathLocal(prod, ["uCom"])?.textContent || "";
-    const qCom  = findPathLocal(prod, ["qCom"])?.textContent || "";
-    const vProd = findPathLocal(prod, ["vProd"])?.textContent || "";
+function extractItems(inf){
+  const dets = byName(inf,"det"); const rows=[];
+  for (const d of dets){
+    const prod = findPath(d,["prod"]); if (!prod) continue;
+    const xProd = findPath(prod,["xProd"])?.textContent || "";
+    const CFOP  = findPath(prod,["CFOP"])?.textContent || "";
+    const uCom  = findPath(prod,["uCom"])?.textContent || "";
+    const qCom  = findPath(prod,["qCom"])?.textContent || "";
+    const vProd = findPath(prod,["vProd"])?.textContent || "";
     rows.push({ xProd, CFOP, uCom, qCom, vProd });
   }
   return rows;
 }
-function extractBasicsXML(text) {
+function sumVProd(items){
+  let s = 0; for (const it of items){ const n = parseNumberBR(it.vProd); if (Number.isFinite(n)) s+=n; }
+  return s;
+}
+function extractBasicsXML(text){
   const doc = parseXML(text);
   const inf = pickInfNFe(doc);
   const key  = getAccessKey(doc);
-  const mod  = findPathLocal(inf, ["ide", "mod"])?.textContent || "";
-  const nNF  = findPathLocal(inf, ["ide", "nNF"])?.textContent || "";
-  const serie= findPathLocal(inf, ["ide", "serie"])?.textContent || "";
-  const dhEmi= (findPathLocal(inf, ["ide", "dhEmi"])?.textContent || findPathLocal(inf, ["ide", "dEmi"])?.textContent || "");
-  const vNF  = findPathLocal(inf, ["total", "ICMSTot", "vNF"])?.textContent || "";
+  const mod  = findPath(inf,["ide","mod"])?.textContent || "";
+  const nNF  = findPath(inf,["ide","nNF"])?.textContent || "";
+  const serie= findPath(inf,["ide","serie"])?.textContent || "";
+  const dhEmi= (findPath(inf,["ide","dhEmi"])?.textContent || findPath(inf,["ide","dEmi"])?.textContent || "");
+  const vNF  = findPath(inf,["total","ICMSTot","vNF"])?.textContent || "";
   const emit = extractParty(inf, "emit");
   const dest = extractParty(inf, "dest");
   const dets = extractItems(inf);
-  return { key, mod, nNF, serie, dhEmi, vNF, emit, dest, dets };
+  const vItens = sumVProd(dets);
+  return { key, mod, nNF, serie, dhEmi, vNF, vItens, emit, dest, dets };
 }
-
-async function collectXMLs(fileList) {
-  const items = [];
-  for (const file of fileList) {
-    const low = file.name.toLowerCase();
-    if (low.endsWith(".xml")) {
-      items.push({ name: file.name, text: await file.text() });
-    } else if (low.endsWith(".zip")) {
-      const zip = await JSZip.loadAsync(file);
-      for (const entry of Object.values(zip.files)) {
-        if (!entry.dir && entry.name.toLowerCase().endsWith(".xml")) {
-          const txt = await entry.async("string");
-          const base = entry.name.split("/").pop();
-          items.push({ name: base, text: txt });
+async function collectXMLs(fileList){
+  const items=[];
+  for (const f of fileList){
+    const low=f.name.toLowerCase();
+    if (low.endsWith(".xml")){
+      items.push({name:f.name, text:await f.text()});
+    } else if (low.endsWith(".zip")){
+      const zip=await JSZip.loadAsync(f);
+      for (const entry of Object.values(zip.files)){
+        if (!entry.dir && entry.name.toLowerCase().endsWith(".xml")){
+          const txt=await entry.async("string");
+          const base=entry.name.split("/").pop();
+          items.push({name:base, text:txt});
         }
       }
     }
   }
-  const out = [];
-  for (const it of items) {
-    try {
-      const b = extractBasicsXML(it.text);
-      if ((b.mod || "") === "55") out.push({ ...b, filename: it.name, raw: it.text });
-    } catch (e) {
-      console.warn("XML ignorado (erro parse):", it.name, e);
+  const out=[];
+  for (const it of items){
+    try{
+      const b=extractBasicsXML(it.text);
+      if (b.mod==="55") out.push({...b, filename:it.name, raw:it.text});
+    }catch(e){ console.warn("XML ignorado:", it.name, e); }
+  }
+  return out;
+}
+function inferCompanyFromXML(xmls){
+  const cnt=new Map();
+  for (const x of xmls){ if (x.emit?.doc) cnt.set(x.emit.doc,(cnt.get(x.emit.doc)||0)+1);
+                          if (x.dest?.doc) cnt.set(x.dest.doc,(cnt.get(x.dest.doc)||0)+1); }
+  let best="",m=-1; for (const [k,v] of cnt) if (v>m){ m=v; best=k; }
+  return best;
+}
+function tagXmlDirection(xmls, companyDoc){
+  for (const x of xmls){
+    x._tipo = (x.emit?.doc===companyDoc) ? "SAÍDA" : (x.dest?.doc===companyDoc) ? "ENTRADA" : "DESCONHECIDO";
+  }
+  return {
+    entradas: xmls.filter(x=>x._tipo==="ENTRADA"),
+    saidas: xmls.filter(x=>x._tipo==="SAÍDA"),
+    desconhe: xmls.filter(x=>x._tipo==="DESCONHECIDO")
+  };
+}
+
+// =========================================
+// SINTEGRA (.txt) — linhas de item → agregação por NF
+// Registro 10 (informante) pega CNPJ. Linhas "50" variam muito; usamos heurísticas.
+// Também tentamos CFOP para direção (1/2 entrada, 5/6 saída).
+// =========================================
+function parseSintegra(fileText){
+  const lines = fileText.split(/\r?\n/).map(l=>l.trim()).filter(Boolean);
+  let cnpjInformante="";
+  const itens=[];
+  for (const ln of lines){
+    if (ln.startsWith("10")){
+      // CNPJ informante em posições 2..15 ou qualquer 14 dígitos no começo
+      const m = ln.match(/(\d{14})/);
+      if (m) cnpjInformante = m[1];
+      continue;
     }
+    if (!ln.startsWith("50")) continue;
+
+    // Tente delimitado
+    const delim = [";","|",","].find(d=>ln.includes(d));
+    let campos = null;
+    if (delim){
+      campos = ln.split(delim).map(s=>s.trim());
+    }
+
+    // Campos mínimos que precisamos por item:
+    // CNPJ contraparte, data, modelo, série, número, valor item (ou total aproximado), CFOP
+    let cnpjContrap="", data="", mod="", serie="", nNF="", vItem="", cfop="";
+
+    if (campos){
+      // heurísticas de índice comuns (varia por UF/layout)
+      // Tente localizar por padrões:
+      const idData  = campos.findIndex(x=>/^\d{8}$/.test(x));
+      const idMod   = campos.findIndex(x=>x==="55");
+      const idCNPJ  = campos.findIndex(x=>/^\d{14}$/.test(digits(x)));
+      const idSerie = (idMod>=0 && campos[idMod+1]) ? idMod+1 : (campos.findIndex(x=>/^\d{1,3}$/.test(x)));
+      const idNF    = (idSerie>=0 && campos[idSerie+1]) ? idSerie+1 : (campos.findIndex(x=>/^\d{1,9}$/.test(x)));
+      const idCFOP  = campos.findIndex(x=>/^\d{4}$/.test(x));
+      const idVal   = (()=>{ for (let i=campos.length-1;i>=0;i--) if (/[\d,\.]/.test(campos[i])) return i; return -1; })();
+
+      cnpjContrap = idCNPJ>=0 ? digits(campos[idCNPJ]) : "";
+      data        = idData>=0 ? campos[idData] : "";
+      mod         = idMod>=0 ? campos[idMod] : "55";
+      serie       = idSerie>=0 ? campos[idSerie] : "";
+      nNF         = idNF>=0 ? campos[idNF] : "";
+      vItem       = idVal>=0 ? campos[idVal] : "";
+      cfop        = idCFOP>=0 ? campos[idCFOP] : "";
+    } else {
+      // Fixo — tente por regex
+      const mCNPJ = ln.match(/([0-9]{14})/);
+      const mData = ln.match(/(\d{8})/);
+      const i55   = ln.indexOf("55");
+      cnpjContrap = mCNPJ ? mCNPJ[1] : "";
+      data        = mData ? mData[1] : "";
+      mod         = "55";
+      if (i55>=0){
+        const after55 = ln.slice(i55+2).trim();
+        const sSerie  = after55.match(/^(\d{1,3})/);
+        const rem     = sSerie ? after55.slice(sSerie[0].length).trim() : after55;
+        const sNF     = rem.match(/^(\d{1,9})/);
+        serie = sSerie ? sSerie[1] : "";
+        nNF   = sNF ? sNF[1] : "";
+      }
+      const mCFOP = ln.match(/\b([1256]\d{3})\b/); // 1xxx/2xxx/5xxx/6xxx
+      cfop = mCFOP ? mCFOP[1].slice(0,4) : "";
+      const mVals = [...ln.matchAll(/([0-9]{1,15}[,\.][0-9]{2})/g)];
+      vItem = mVals.length ? mVals[mVals.length-1][1] : "";
+    }
+
+    itens.push({
+      cnpjContrap: digits(cnpjContrap),
+      data: toYMD(data),
+      mod: mod || "55",
+      serie: String(Number(digits(serie) || 0)),
+      nNF: String(Number(digits(nNF) || 0)),
+      vItem,
+      cfop
+    });
+  }
+
+  // Agrega por NF: contraparte+mod+serie+nNF+data
+  const map = new Map();
+  const keyNF = (r)=>`${r.cnpjContrap}|${r.mod}|${r.serie}|${r.nNF}|${r.data}`;
+  for (const it of itens){
+    if (it.mod!=="55") continue;
+    const k = keyNF(it);
+    const prev = map.get(k) || { ...it, vItens: 0, count:0 };
+    const n = parseNumberBR(it.vItem);
+    if (Number.isFinite(n)) prev.vItens += n;
+    prev.count++;
+    map.set(k, prev);
+  }
+  const nfs = [...map.values()];
+  // Direção por CFOP predominante na NF
+  const dirByCFOP = (cf) => /^1|^2/.test(cf) ? "ENTRADA" : /^5|^6/.test(cf) ? "SAÍDA" : "DESCONHECIDO";
+
+  // Monte linhas finais do Sintegra agregadas
+  const rows = nfs.map(r => {
+    // Heurística direção: se informante é emitente, a contraparte é destinatária (SAÍDA), senão ENTRADA.
+    let _tipo = "DESCONHECIDO";
+    if (r.cfop) _tipo = dirByCFOP(r.cfop);
+    return {
+      origem:"SINTEGRA",
+      cnpjContrap: r.cnpjContrap,
+      mod:r.mod, serie:r.serie, nNF:r.nNF, data:r.data,
+      vItens: r.vItens,
+      _tipo
+    };
+  });
+
+  return { cnpjInformante, rows };
+}
+
+// =========================================
+// Chave adaptativa e comparação
+// =========================================
+function adaptiveKey(rec){
+  // Para XML: usamos contraparte em relação à empresa para ficar simétrico ao Sintegra
+  // Para SINTEGRA: já temos cnpjContrap
+  if (rec.origem==="SINTEGRA"){
+    return `${rec.cnpjContrap}|${rec.mod}|${rec.serie}|${rec.nNF}|${rec.data}`;
+  } else {
+    return `${rec._cnpjContrap || ""}|${rec.mod || "55"}|${Number(digits(rec.serie)||0)}|${Number(digits(rec.nNF)||0)}|${toYMD(rec.dhEmi)||toYMD(rec.data)||""}`;
+  }
+}
+function buildXMLNorm(xmls, companyDoc, dirFilter){
+  const out=[];
+  for (const x of xmls){
+    // direção
+    const tipo = x._tipo;
+    if (dirFilter!=="AUTO" && tipo!==dirFilter) continue;
+
+    // contraparte
+    const contrap = (tipo==="SAÍDA") ? x.dest?.doc : (tipo==="ENTRADA") ? x.emit?.doc : "";
+    const rec = {
+      origem: "XML",
+      mod: x.mod || "55",
+      serie: String(Number(digits(x.serie)||0)),
+      nNF: String(Number(digits(x.nNF)||0)),
+      data: toYMD(x.dhEmi),
+      vItens: x.vItens, // soma de vProd (coerente com Sintegra de itens)
+      vNF: x.vNF,
+      _tipo: tipo,
+      _cnpjContrap: contrap || "",
+      emit: x.emit, dest: x.dest,
+      key: x.key, raw:x
+    };
+    out.push(rec);
+  }
+  return out;
+}
+function buildSintegraNorm(rows, companyDoc, dirFilter){
+  const out=[];
+  for (const r of rows){
+    // Direção final: se AUTO, mantemos; se filtro selecionado, respeita
+    const tipo = r._tipo;
+    if (dirFilter!=="AUTO" && tipo!==dirFilter) continue;
+
+    out.push({
+      origem:"SINTEGRA",
+      cnpjContrap: r.cnpjContrap,
+      mod: r.mod, serie: r.serie, nNF: r.nNF, data: r.data,
+      vItens: r.vItens,
+      _tipo: tipo
+    });
   }
   return out;
 }
 
-// Descobre CNPJ da empresa e marca tipo (ENTRADA/SAÍDA) para cada XML
-function tagXmlDirection(xmlList) {
-  if (!xmlList.length) return { companyDoc: "", entradas: [], saidas: [] };
+// Tabela UI
+function fillTables(common, onlyS, onlyX){
+  const headersCommon = ["Tipo","Série","NF","Emissão","Valor Itens","Emitente","Destinatário","Obs"];
+  const rowsCommon = common.map(r => [
+    r._tipo || "—",
+    r.serie, r.nNF, ymdToBR(r.data||""), moneyBR(r.vItens||""),
+    r.emit?.name || "—", r.dest?.name || "—",
+    r._obs || ""
+  ]);
+  $("tableCommon").innerHTML = tableFromRows(headersCommon, rowsCommon);
 
-  // Heurística: o CNPJ mais frequente entre (emit, dest) vira o CNPJ da empresa
-  const freq = new Map();
-  for (const x of xmlList) {
-    if (x.emit?.doc) freq.set(x.emit.doc, (freq.get(x.emit.doc) || 0) + 1);
-    if (x.dest?.doc) freq.set(x.dest.doc, (freq.get(x.dest.doc) || 0) + 1);
-  }
-  let companyDoc = ""; let max = -1;
-  for (const [doc, c] of freq.entries()) if (c > max) { max = c; companyDoc = doc; }
-
-  for (const x of xmlList) {
-    x._tipo = (x.emit?.doc === companyDoc) ? "SAÍDA" : (x.dest?.doc === companyDoc) ? "ENTRADA" : "DESCONHECIDO";
-  }
-  const entradas = xmlList.filter(x => x._tipo === "ENTRADA");
-  const saidas   = xmlList.filter(x => x._tipo === "SAÍDA");
-  return { companyDoc, entradas, saidas };
+  const headersOnly = ["Origem","Tipo","Série","NF","Emissão","Valor Itens"];
+  $("tableOnlySintegra").innerHTML = tableFromRows(headersOnly, onlyS.map(r => [
+    "SINTEGRA", r._tipo || "—", r.serie, r.nNF, ymdToBR(r.data||""), moneyBR(r.vItens||"")
+  ]));
+  $("tableOnlyXML").innerHTML = tableFromRows(headersOnly, onlyX.map(r => [
+    "XML", r._tipo || "—", r.serie, r.nNF, ymdToBR(r.data||""), moneyBR(r.vItens||"")
+  ]));
 }
 
-// =========================================
-// SINTEGRA (.txt) — suporta “zerado” sem quebrar
-// - Lê Registro 10 (informante) para CNPJ da empresa
-// - Lê Registro 50 (NF modelo 55) com heurísticas de campos
-// - Tenta inferir ENTRADA/SAÍDA (se não der, marca DESCONHECIDO)
-// =========================================
-function parseSintegraDelimited(line) {
-  const delim = [";", ",", "|"].find(d => line.includes(d));
-  if (!delim) return null;
-  const t = line.split(delim).map(s => s.trim());
-  if (t[0] !== "50") return null;
-
-  // Heurística comum de posições (varia por UF/layout)
-  let idx = { data: 4, mod: 5, serie: 6, nf: 7, valor: 11, cnpjCampo: 1 };
-  // Ajustes se necessário
-  if (!/^\d{8}$/.test(t[idx.data])) {
-    const id = t.findIndex(x => /^\d{8}$/.test(x));
-    if (id >= 0) idx.data = id;
-  }
-  if (t[idx.mod] !== "55") {
-    const im = t.findIndex(x => x === "55");
-    if (im >= 0) idx.mod = im;
-  }
-  if (!t[idx.serie] || !t[idx.nf]) {
-    idx.serie = Math.min(idx.mod + 1, t.length - 1);
-    idx.nf    = Math.min(idx.mod + 2, t.length - 1);
-  }
-  if (!t[idx.valor] || !/[0-9]/.test(t[idx.valor])) {
-    for (let i = t.length - 1; i >= 0; i--) {
-      if (/[\d,\.]/.test(t[i])) { idx.valor = i; break; }
-    }
-  }
-  return {
-    mod: t[idx.mod],
-    serie: t[idx.serie],
-    nNF: t[idx.nf],
-    data: t[idx.data],
-    vNF: t[idx.valor],
-    cnpjCampo: digits(t[idx.cnpjCampo] || "")
-  };
-}
-function parseSintegraFixed(line) {
-  if (!line.startsWith("50")) return null;
-
-  // CNPJ provável perto do início (14 dígitos)
-  const mCNPJ = line.match(/^\d{2}\s*([0-9]{14})/) || line.match(/([0-9]{14})/);
-  const cnpjCampo = mCNPJ ? mCNPJ[1] : "";
-
-  // data AAAAMMDD (primeira ocorrência)
-  const mData = line.match(/(\d{8})/);
-  const data = mData ? mData[1] : "";
-
-  // modelo 55
-  const m55 = line.match(/55/);
-  if (!m55) return null;
-
-  // série (1-3 dígitos) após 55
-  const after55 = line.slice(m55.index + 2);
-  const mSerie = after55.match(/^\s*([0-9]{1,3})/);
-  const serie = mSerie ? mSerie[1] : "";
-
-  // número após série
-  const afterSerie = mSerie ? after55.slice(mSerie[0].length) : after55;
-  const mNF = afterSerie.match(/^\s*([0-9]{1,9})/);
-  const nNF = mNF ? mNF[1] : "";
-
-  // valor: último número com 2 casas
-  const mVals = [...line.matchAll(/([0-9]{1,15}[,\.][0-9]{2})/g)];
-  const vNF = mVals.length ? mVals[mVals.length - 1][1] : "";
-
-  return { mod: "55", serie, nNF, data, vNF, cnpjCampo };
-}
-function parseSintegraLine(line) {
-  if (!line || !line.trim()) return null;
-  if (line.startsWith("10")) { // Registro do informante — tratamos fora
-    const cnpj = digits(line.slice(2, 16));
-    return { _reg: 10, cnpjInformante: cnpj };
-  }
-  if (!line.startsWith("50")) return null;
-  return parseSintegraDelimited(line) || parseSintegraFixed(line);
-}
-
-async function collectSintegra(file) {
-  if (!file) return { header: null, rows: [] };
-  const text = await file.text();
-  const lines = text.split(/\r?\n/);
-  let header = null;
-  const rows50 = [];
-
-  for (const raw of lines) {
-    const line = raw.trim();
-    if (!line) continue;
-    try {
-      if (line.startsWith("10")) {
-        const h = parseSintegraLine(line);
-        if (h && h._reg === 10) header = { cnpj: h.cnpjInformante };
-      } else if (line.startsWith("50")) {
-        const rec = parseSintegraLine(line);
-        if (rec && rec.mod === "55") rows50.push(rec);
-      }
-    } catch (e) {
-      console.warn("Sintegra linha ignorada:", e);
-    }
-  }
-  return { header, rows: rows50 };
-}
-
-// Marca ENTRADA/SAÍDA no SINTEGRA quando possível (heurística)
-function tagSintegraDirection(rows, companyDoc) {
-  for (const r of rows) {
-    // se o campo CNPJ da linha for o mesmo CNPJ da empresa, assumimos SAÍDA
-    // caso contrário, ENTRADA. Se faltou tudo, DESCONHECIDO.
-    if (companyDoc && r.cnpjCampo) {
-      r._tipo = (r.cnpjCampo === companyDoc) ? "SAÍDA" : "ENTRADA";
-    } else {
-      r._tipo = "DESCONHECIDO";
-    }
-  }
-  const entradas = rows.filter(r => r._tipo === "ENTRADA");
-  const saidas   = rows.filter(r => r._tipo === "SAÍDA");
-  const desconhe = rows.filter(r => r._tipo === "DESCONHECIDO");
-  return { entradas, saidas, desconhe };
-}
-
-// =========================================
-// Relatório PDF (about:blank) — somente diferentes, sem chave
-// =========================================
-function openClientPDFPreview(meta, diffs) {
-  const rows = diffs.map(r => ({
+// Relatório PDF (diferentes)
+function openClientPDFPreview(meta, diffs){
+  const rows = diffs.map(r=>({
     origem: r.origem,
-    nNF: r.nNF || "",
-    serie: r.serie || "",
-    emissao: ymdToBR(r.data || r.emissao || ""),
-    valor: moneyBR(r.vNF || r.valor || ""),
+    nNF: r.nNF, serie: r.serie, emissao: ymdToBR(r.data||""),
+    valor: moneyBR(r.vItens||r.vNF||""),
     emitName: r.emit?.name || "—",
     emitDoc: r.emit?.doc || "",
     destName: r.dest?.name || "—",
     destDoc: r.dest?.doc || ""
   }));
-
   const css = `
   @page { margin: 16mm; }
   body{ font-family:Segoe UI,Roboto,Arial,sans-serif; color:#222; }
@@ -377,15 +424,14 @@ function openClientPDFPreview(meta, diffs) {
   td.num{ text-align:right; }
   .section-title{ margin:14px 0 6px; color:#8B0000; font-weight:700; }
   `;
-
   const headerCols = ["Origem","NF","Série","Emissão","Valor (R$)","Emitente","Documento","Destinatário","Documento"];
   const bodyRows = rows.map(r => `
     <tr>
       <td>${r.origem}</td>
-      <td>${r.nNF}</td>
-      <td>${r.serie}</td>
-      <td>${r.emissao}</td>
-      <td class="num">${r.valor}</td>
+      <td>${r.nNF||""}</td>
+      <td>${r.serie||""}</td>
+      <td>${r.emissao||""}</td>
+      <td class="num">${r.valor||""}</td>
       <td>${r.emitName}</td>
       <td>${r.emitDoc}</td>
       <td>${r.destName}</td>
@@ -394,9 +440,9 @@ function openClientPDFPreview(meta, diffs) {
 
   const html = `
 <!doctype html><html><head><meta charset="utf-8">
-  <title>Relatório — Notas Diferentes</title>
-  <style>${css}</style>
-</head><body>
+<title>Relatório — Notas Diferentes</title>
+<style>${css}</style></head>
+<body>
   <header>
     <img src="${BRAND_DATA_URL}" alt="Logo">
     <div class="title">Relatório de Conferência — Notas Diferentes</div>
@@ -405,7 +451,6 @@ function openClientPDFPreview(meta, diffs) {
     Empresa: <strong>${meta.companyName || "—"}</strong> — ${meta.companyDoc || ""}<br>
     Gerado em: ${new Date().toLocaleString("pt-BR")} • Total: <strong>${rows.length}</strong>
   </div>
-
   <div class="section-title">Notas para conferência</div>
   <table>
     <thead><tr>${headerCols.map(h=>`<th>${h}</th>`).join("")}</tr></thead>
@@ -414,16 +459,14 @@ function openClientPDFPreview(meta, diffs) {
   <script>setTimeout(function(){try{window.focus();window.print();}catch(e){}},350);</script>
 </body></html>`;
   const w = window.open("", "_blank");
-  if (!w) { alert("Permita pop-ups para visualizar o PDF."); return; }
+  if (!w){ alert("Permita pop-ups para visualizar o PDF."); return; }
   w.document.open(); w.document.write(html); w.document.close();
 }
 
-// =========================================
-// DANFE Pro (about:blank) com barcode
-// =========================================
-function danfeHTML(x) {
-  const chave = digits(x.key || "");
-  const chaveFmt = chave ? chave.replace(/(\d{4})(?=\d)/g, "$1 ").trim() : "—";
+// DANFE abre em about:blank (lado XML)
+function danfeHTML(x){
+  const chave = digits(x.key||"");
+  const chaveFmt = chave ? chave.replace(/(\d{4})(?=\d)/g,"$1 ").trim() : "—";
   const css = `
     @page { size:A4; margin:12mm; }
     body{ font-family:Segoe UI,Roboto,Arial,sans-serif; color:#111; }
@@ -436,25 +479,22 @@ function danfeHTML(x) {
     thead{ display:table-header-group; }
     th,td{ border:1px solid #000; padding:4px 6px; }
     th{ background:#eee; }
-    td.r{ text-align:right; }
-    td.c{ text-align:center; }
-    .barcode{ width:100%; height:52px; }
+    td.r{ text-align:right; } td.c{ text-align:center; }
     .logo{ width:48px; height:48px; border-radius:8px; }
     .header{ display:flex; align-items:center; justify-content:space-between; margin-bottom:4px; }
     .header .left{ display:flex; align-items:center; gap:8px; }
   `;
-  const items = (x.dets || []).map((d, i) => `
+  const items = (x.dets||[]).map((d,i)=>`
     <tr>
-      <td class="c">${i + 1}</td>
-      <td>${d.xProd || ""}</td>
-      <td class="c">${d.CFOP || ""}</td>
-      <td class="c">${d.uCom || ""}</td>
-      <td class="r">${d.qCom || ""}</td>
-      <td class="r">${moneyBR(d.vProd || "")}</td>
+      <td class="c">${i+1}</td>
+      <td>${d.xProd||""}</td>
+      <td class="c">${d.CFOP||""}</td>
+      <td class="c">${d.uCom||""}</td>
+      <td class="r">${d.qCom||""}</td>
+      <td class="r">${moneyBR(d.vProd||"")}</td>
     </tr>`).join("");
   return `
-<!doctype html>
-<html><head><meta charset="utf-8"><title>DANFE — ${x.nNF || ""}/${x.serie || ""}</title>
+<!doctype html><html><head><meta charset="utf-8"><title>DANFE — ${x.nNF||""}/${x.serie||""}</title>
 <style>${css}</style></head>
 <body>
   <div class="header">
@@ -462,23 +502,22 @@ function danfeHTML(x) {
       <img class="logo" src="${BRAND_DATA_URL}" alt="Logo">
       <div>
         <h1>DANFE — Documento Auxiliar da NF-e</h1>
-        <div class="muted">NF-e nº <strong>${x.nNF || ""}</strong> — Série <strong>${x.serie || ""}</strong> — Emissão <strong>${ymdToBR(toYMD(x.dhEmi)) || ""}</strong></div>
+        <div class="muted">NF-e nº <strong>${x.nNF||""}</strong> — Série <strong>${x.serie||""}</strong> — Emissão <strong>${ymdToBR(toYMD(x.dhEmi))||""}</strong></div>
       </div>
     </div>
-    <div class="right"><svg id="barcode"></svg></div>
   </div>
 
   <div class="box"><strong>Chave de Acesso:</strong> ${chaveFmt}</div>
 
   <div class="grid2">
-    <div class="box"><strong>Emitente</strong><br>${x.emit?.name || "—"}<br>Doc: ${x.emit?.doc || ""} • UF: ${x.emit?.uf || ""}</div>
-    <div class="box"><strong>Destinatário</strong><br>${x.dest?.name || "—"}<br>Doc: ${x.dest?.doc || ""} • UF: ${x.dest?.uf || ""}</div>
+    <div class="box"><strong>Emitente</strong><br>${x.emit?.name||"—"}<br>Doc: ${x.emit?.doc||""} • UF: ${x.emit?.uf||""}</div>
+    <div class="box"><strong>Destinatário</strong><br>${x.dest?.name||"—"}<br>Doc: ${x.dest?.doc||""} • UF: ${x.dest?.uf||""}</div>
   </div>
 
   <div class="grid3">
-    <div class="box"><strong>Número</strong><br>${x.nNF || ""}</div>
-    <div class="box"><strong>Série</strong><br>${x.serie || ""}</div>
-    <div class="box"><strong>Valor Total</strong><br>${moneyBR(x.vNF || "")}</div>
+    <div class="box"><strong>Número</strong><br>${x.nNF||""}</div>
+    <div class="box"><strong>Série</strong><br>${x.serie||""}</div>
+    <div class="box"><strong>Valor Total</strong><br>${moneyBR(x.vNF||"")}</div>
   </div>
 
   <div class="box">
@@ -489,257 +528,192 @@ function danfeHTML(x) {
     </table>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.6/dist/JsBarcode.all.min.js"></script>
-  <script>
-    (function(){
-      try{
-        var key = "${chave}";
-        if (key && window.JsBarcode) JsBarcode("#barcode", key, {format:"CODE128", displayValue:false, height:48, margin:0});
-      }catch(e){}
-      setTimeout(function(){ try{ window.focus(); window.print(); }catch(_){} }, 400);
-    })();
-  </script>
+  <script>setTimeout(function(){try{window.focus();window.print();}catch(e){}},400);</script>
 </body></html>`;
 }
-function openDANFEWindow(x) {
-  const w = window.open("", "_blank");
-  if (!w) { alert("Permita pop-ups para visualizar o DANFE."); return; }
+function openDANFEWindow(x){
+  const w=window.open("","_blank");
+  if(!w){ alert("Permita pop-ups para visualizar o DANFE."); return; }
   w.document.open(); w.document.write(danfeHTML(x)); w.document.close();
 }
-
-// =========================================
-// Excel
-// =========================================
-function buildExcelSheets(common, onlyS, onlyX) {
-  const wb = XLSX.utils.book_new();
-  const cols = ["origem","modelo","série","nNF","emissão","valor","emitente","emit_doc","destinatário","dest_doc","tipo"];
-  const toAOA = (arr) => [cols, ...arr.map(r => ([
-    r.origem || "",
-    "55",
-    r.serie || "",
-    r.nNF || "",
-    r.data || r.emissao || "",
-    r.vNF || r.valor || "",
-    r.emit?.name || "",
-    r.emit?.doc || "",
-    r.dest?.name || "",
-    r.dest?.doc || "",
-    r._tipo || ""
-  ]))];
-  XLSX.utils.book_append_sheet(wb, XLSX.utils.aoa_to_sheet(toAOA(common)), "em_comum");
-  XLSX.utils.book_append_sheet(wb, XLSX.utils.aoa_to_sheet(toAOA(onlyS)), "so_sintegra");
-  XLSX.utils.book_append_sheet(wb, XLSX.utils.aoa_to_sheet(toAOA(onlyX)), "so_xmls");
-  const wbout = XLSX.write(wb, { bookType: "xlsx", type: "array" });
-  return new Blob([wbout], { type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" });
-}
-
-// =========================================
-async function compareAll(fileSintegra, filesXML) {
-  const warn = $("warn"); warn.textContent = "";
-  $("progressBar").classList.remove("hidden");
-
-  // Carrega XML (mod 55)
-  const X = await collectXMLs(filesXML);
-
-  // Descobre CNPJ da empresa pelas NFe
-  const { companyDoc, entradas: xmlEntradas, saidas: xmlSaidas } = tagXmlDirection(X);
-
-  // Carrega SINTEGRA (suporta "zerado")
-  let SHeader = null, SRows = [];
-  if (fileSintegra) {
-    const S = await collectSintegra(fileSintegra);
-    SHeader = S.header; SRows = S.rows;
-  }
-  // Se SINTEGRA tiver CNPJ do informante, preferimos esse como companyDoc (mais confiável)
-  const companyDocFinal = digits(SHeader?.cnpj || "") || companyDoc || "";
-
-  // Classifica SINTEGRA (heurística com companyDocFinal)
-  const taggedS = tagSintegraDirection(SRows, companyDocFinal);
-  const S = SRows.map(r => ({
-    origem: "SINTEGRA",
-    serie: normSerie(r.serie),
-    nNF: normNF(r.nNF),
-    data: /^\d{8}$/.test(r.data) ? r.data : toYMD(r.data),
-    vNF: r.vNF,
-    emit: { name: "—", doc: "", uf: "" },
-    dest: { name: "—", doc: "", uf: "" },
-    _tipo: r._tipo,
-    raw: r
-  }));
-
-  // Normaliza XML
-  const XN = X.map(x => ({
-    origem: "XML",
-    serie: normSerie(x.serie),
-    nNF: normNF(x.nNF),
-    data: toYMD(x.dhEmi),
-    vNF: x.vNF,
-    emit: x.emit, dest: x.dest,
-    _tipo: x._tipo,
-    raw: x
-  }));
-
-  // Index por chave (serie|nNF)
-  const key = (r) => `${r.serie}|${r.nNF}`;
-  const mapS = new Map(), mapX = new Map();
-  for (const r of S) if (r.serie && r.nNF) mapS.set(key(r), r);
-  for (const r of XN) if (r.serie && r.nNF) mapX.set(key(r), r);
-
-  const common = [];
-  const onlyS  = [];
-  const onlyX  = [];
-
-  // Em comum (mesmo série+NF e valor/data coincidentes)
-  for (const [k, s] of mapS) {
-    const x = mapX.get(k);
-    if (!x) continue;
-    const sameDate = (s.data && x.data) ? (s.data === x.data) : true;
-    const sameVal  = sameValue(s.vNF, x.vNF, 0.02);
-    if (sameDate && sameVal) {
-      common.push({
-        origem: "COMUM",
-        serie: s.serie, nNF: s.nNF,
-        data: s.data || x.data, vNF: s.vNF || x.vNF,
-        emit: x.emit, dest: x.dest,
-        _tipo: x._tipo
-      });
-    }
-  }
-  for (const [k, s] of mapS) {
-    if (!mapX.has(k) || !common.find(r => r.serie === s.serie && r.nNF === s.nNF)) {
-      onlyS.push(s);
-    }
-  }
-  for (const [k, x] of mapX) {
-    if (!mapS.has(k) || !common.find(r => r.serie === x.serie && r.nNF === x.nNF)) {
-      onlyX.push(x);
-    }
-  }
-
-  // UI
-  $("results").classList.remove("hidden");
-  $("stats").innerHTML = `
-    <div>NFe XML (mod 55): <br><strong>${XN.length}</strong><br><small>Entradas: ${xmlEntradas.length} • Saídas: ${xmlSaidas.length}</small></div>
-    <div>Registros SINTEGRA 50: <br><strong>${S.length}</strong><br><small>Entradas: ${taggedS.entradas.length} • Saídas: ${taggedS.saidas.length} • Desconh.: ${taggedS.desconhe.length}</small></div>
-    <div>Em comum: <br><strong>${common.length}</strong></div>
-    <div>Diferenças: <br><strong>${onlyS.length + onlyX.length}</strong></div>
-    <div>CNPJ Empresa: <br><strong>${companyDocFinal || "—"}</strong></div>
-  `;
-
-  const headersCommon = ["Tipo","Série","NF","Emissão","Valor","Emitente","Destinatário"];
-  const rowsCommon = common.map(r => [
-    r._tipo || "—", r.serie, r.nNF, ymdToBR(r.data || ""), moneyBR(r.vNF || ""),
-    r.emit?.name || "—", r.dest?.name || "—"
-  ]);
-  $("tableCommon").innerHTML = tableFromRows(headersCommon, rowsCommon);
-
-  const headersOnly = ["Origem","Tipo","Série","NF","Emissão","Valor"];
-  $("tableOnlySintegra").innerHTML = tableFromRows(headersOnly, onlyS.map(r => [
-    "SINTEGRA", r._tipo || "—", r.serie, r.nNF, ymdToBR(r.data || ""), moneyBR(r.vNF || "")
-  ]));
-  $("tableOnlyXML").innerHTML = tableFromRows(headersOnly, onlyX.map(r => [
-    "XML", r._tipo || "—", r.serie, r.nNF, ymdToBR(r.data || ""), moneyBR(r.vNF || "")
-  ]));
-
-  // Ações
-  const dlExcel = $("dlExcel");
-  const dlPDF   = $("dlPDF");
-  const viewDanfeBtn = $("viewDanfeBtn");
-
-  dlExcel.disabled = dlPDF.disabled = viewDanfeBtn.disabled = false;
-
-  dlExcel.onclick = () => {
-    const blob = buildExcelSheets(common, onlyS, onlyX);
-    saveAs(blob, "sintegra_xml_relatorio.xlsx");
-  };
-
-  dlPDF.onclick = () => {
-    const diffs = [
-      ...onlyS.map(r => ({ ...r, origem: "SÓ SINTEGRA" })),
-      ...onlyX.map(r => ({ ...r, origem: "SÓ XML" }))
-    ];
-    // meta baseada nas NFe (se tivermos companyDocFinal, tenta achar nome)
-    const any = XN.find(xx => (xx.emit?.doc === companyDocFinal) || (xx.dest?.doc === companyDocFinal)) || XN[0];
-    const meta = {
-      companyName: (any && (any.emit?.doc === companyDocFinal ? any.emit?.name : any.dest?.name)) || "",
-      companyDoc: companyDocFinal
-    };
-    openClientPDFPreview(meta, diffs);
-  };
-
-  viewDanfeBtn.onclick = () => {
-    showDanfeModal(onlyX, X); // DANFE só faz sentido para o lado XML
-  };
-
-  $("progressBar").classList.add("hidden");
-  window.__cmp = { X, XN, S, common, onlyS, onlyX, companyDocFinal };
-}
-
-// Modal DANFE — lista cartões com botão "Abrir DANFE"
-function danfeCardHTML(x) {
+function danfeCardHTML(x){
   return `
     <div class="danfe-card">
       <h4>NF ${x.nNF} — Série ${x.serie}</h4>
       <div style="font-size:13px;color:#555;margin-bottom:8px;">
-        Emissão: ${ymdToBR(toYMD(x.dhEmi))} • Valor: ${moneyBR(x.vNF)}
+        Emissão: ${ymdToBR(toYMD(x.dhEmi))} • Valor vNF: ${moneyBR(x.vNF)} • Itens: ${moneyBR(x.vItens)}
       </div>
       <div class="row" style="display:flex;gap:8px;flex-wrap:wrap;">
-        <button class="btn primary" data-key="${x.key}">Abrir DANFE</button>
-        <a class="btn secondary" target="_blank" rel="noopener"
-           href="https://www.nfe.fazenda.gov.br/portal/consultaRecaptcha.aspx?tipoConsulta=resumo&tipoConteudo=7PhJ+gAVw2g%3D">Consultar na SEFAZ</a>
+        <button class="btn primary" data-nf="${x.nNF}" data-serie="${x.serie}">Abrir DANFE</button>
       </div>
     </div>
   `;
 }
-function showDanfeModal(onlyXNorm, XRaw) {
-  const modal = $("danfeModal");
-  const listEl = $("danfeList");
-  if (!onlyXNorm || !onlyXNorm.length) { alert("Não há notas do lado XML para visualizar."); return; }
-
-  const byKey = new Map();
-  for (const x of XRaw) if (x.key) byKey.set(x.key, x);
-
-  const cards = onlyXNorm.map(nx => {
-    const full = byKey.get(nx.raw.key) || nx.raw;
-    nx.__full = full; // cache
-    return danfeCardHTML(full);
+function showDanfeModal(xmlDiffs, XRaw){
+  const modal = $("danfeModal"), listEl = $("danfeList");
+  if (!xmlDiffs?.length){ alert("Não há notas do lado XML para visualizar."); return; }
+  const byNS = new Map();
+  for (const x of XRaw){ const k = `${Number(digits(x.serie)||0)}|${Number(digits(x.nNF)||0)}`; byNS.set(k,x); }
+  const cards = xmlDiffs.map(nx=>{
+    const full = byNS.get(`${nx.serie}|${nx.nNF}`) || nx.raw || nx;
+    nx.__full = full; return danfeCardHTML(full);
   }).join("");
-
   listEl.innerHTML = `<div>${cards}</div>`;
   modal.classList.remove("hidden");
-
-  listEl.querySelectorAll("button[data-key]").forEach(btn => {
-    btn.addEventListener("click", () => {
-      const key = btn.getAttribute("data-key");
-      const rec = onlyXNorm.find(o => (o.raw.key === key));
-      const full = rec?.__full || (window.__cmp?.X || []).find(xx => xx.key === key);
+  listEl.querySelectorAll("button[data-nf]").forEach(btn=>{
+    btn.addEventListener("click", ()=>{
+      const nf = btn.getAttribute("data-nf"), se = btn.getAttribute("data-serie");
+      const rec = xmlDiffs.find(o=>o.nNF===nf && o.serie===se);
+      const full = rec?.__full || (window.__cmp?.X || []).find(xx=>xx.nNF===nf && xx.serie===se);
       if (full) openDANFEWindow(full);
     });
   });
+  $("closeDanfe").onclick = ()=> modal.classList.add("hidden");
+  modal.addEventListener("click", (e)=>{ if(e.target.id==="danfeModal") modal.classList.add("hidden"); });
+}
 
-  $("closeDanfe").onclick = () => modal.classList.add("hidden");
-  modal.addEventListener("click", (e) => { if (e.target.id === "danfeModal") modal.classList.add("hidden"); });
+// Excel
+function buildExcelSheets(common, onlyS, onlyX){
+  const wb = XLSX.utils.book_new();
+  const cols = ["origem","direcao","modelo","série","nNF","emissão","valor_itens","emitente","emit_doc","destinatário","dest_doc"];
+  const toAOA = (arr)=>[cols, ...arr.map(r=>[
+    r.origem||"", r._tipo||"", "55",
+    r.serie||"", r.nNF||"", r.data||"",
+    r.vItens||"",
+    r.emit?.name||"", r.emit?.doc||"",
+    r.dest?.name||"", r.dest?.doc||""
+  ])];
+  XLSX.utils.book_append_sheet(wb, XLSX.utils.aoa_to_sheet(toAOA(common)),"em_comum");
+  XLSX.utils.book_append_sheet(wb, XLSX.utils.aoa_to_sheet(toAOA(onlyS)),"so_sintegra");
+  XLSX.utils.book_append_sheet(wb, XLSX.utils.aoa_to_sheet(toAOA(onlyX)),"so_xmls");
+  const wbout = XLSX.write(wb,{bookType:"xlsx", type:"array"});
+  return new Blob([wbout],{type:"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"});
+}
+
+// =========================================
+// COMPARAÇÃO — fluxo principal
+// =========================================
+async function compareAll(fileSintegra, filesXML, dirFilter){
+  const warn = $("warn"); warn.textContent=""; $("progressBar").classList.remove("hidden");
+
+  // XMLs
+  const X = await collectXMLs(filesXML);
+
+  // CNPJ da empresa via XML (fallback)
+  let companyDocXML = inferCompanyFromXML(X);
+
+  // SINTEGRA
+  let SHeader=null, SRows=[];
+  if (fileSintegra){
+    const txt = await fileSintegra.text();
+    const parsed = parseSintegra(txt);
+    SHeader = { cnpj: parsed.cnpjInformante || "" };
+    SRows   = parsed.rows;
+  }
+
+  const companyDoc = digits(SHeader?.cnpj || "") || companyDocXML || "";
+
+  // Tag direção XML com CNPJ final
+  const tags = tagXmlDirection(X, companyDoc);
+
+  // Normaliza conforme filtro direção
+  const dirSel = dirFilter || "AUTO";
+  const XN = buildXMLNorm(X, companyDoc, dirSel);
+  const SN = buildSintegraNorm(SRows, companyDoc, dirSel);
+
+  // Index por chave adaptativa
+  const mapS = new Map(), mapX = new Map();
+  for (const r of SN){ mapS.set(adaptiveKey(r), r); }
+  for (const r of XN){ mapX.set(adaptiveKey(r), r); }
+
+  // Em comum (por chave) com tolerância de valor_itens
+  const common = [];
+  for (const [k, s] of mapS){
+    const x = mapX.get(k);
+    if (!x) continue;
+    const sameVal = sameValue(s.vItens, x.vItens, 0.05);
+    const rec = {
+      origem:"COMUM",
+      serie: s.serie || x.serie,
+      nNF: s.nNF || x.nNF,
+      data: s.data || x.data,
+      vItens: x.vItens,
+      emit: x.emit, dest: x.dest,
+      _tipo: x._tipo
+    };
+    if (!sameVal){
+      rec._obs = `Valor itens difere (SINTEGRA ${moneyBR(s.vItens)} × XML ${moneyBR(x.vItens)})`;
+    }
+    common.push(rec);
+  }
+
+  // Diferentes
+  const onlyS = [];
+  const onlyX = [];
+  for (const [k, s] of mapS) if (!mapX.has(k)) onlyS.push(s);
+  for (const [k, x] of mapX) if (!mapS.has(k)) onlyX.push(x);
+
+  // Estatísticas
+  $("results").classList.remove("hidden");
+  $("stats").innerHTML = `
+    <div>XML (mod 55): <br><strong>${XN.length}</strong><br><small>Entradas: ${tags.entradas.length} • Saídas: ${tags.saidas.length}</small></div>
+    <div>SINTEGRA (NF agregada): <br><strong>${SN.length}</strong></div>
+    <div>Em comum (mesma NF): <br><strong>${common.length}</strong></div>
+    <div>Só Sintegra + Só XML: <br><strong>${onlyS.length + onlyX.length}</strong></div>
+    <div>CNPJ Empresa: <br><strong>${companyDoc || "—"}</strong></div>
+  `;
+
+  // Tabelas
+  fillTables(common, onlyS, onlyX);
+
+  // Ações
+  const dlExcel = $("dlExcel"), dlPDF = $("dlPDF"), viewDanfeBtn = $("viewDanfeBtn");
+  dlExcel.disabled = dlPDF.disabled = viewDanfeBtn.disabled = false;
+
+  dlExcel.onclick = ()=>{
+    const blob = buildExcelSheets(common, onlyS, onlyX);
+    saveAs(blob, "relatorio_sintegra_xml.xlsx");
+  };
+
+  dlPDF.onclick = ()=>{
+    const diffs = [
+      ...onlyS.map(r=>({ ...r, origem:"SÓ SINTEGRA" })),
+      ...onlyX.map(r=>({ ...r, origem:"SÓ XML" }))
+    ];
+    // meta: tenta achar nome via XML
+    const any = X.find(xx => (xx.emit?.doc===companyDoc) || (xx.dest?.doc===companyDoc)) || X[0];
+    const meta = {
+      companyName: (any && (any.emit?.doc===companyDoc ? any.emit?.name : any.dest?.name)) || "",
+      companyDoc: companyDoc
+    };
+    openClientPDFPreview(meta, diffs);
+  };
+
+  viewDanfeBtn.onclick = ()=>{
+    // DANFE faz sentido somente para lado XML → pegue os "só XML"
+    showDanfeModal(onlyX, X);
+  };
+
+  $("progressBar").classList.add("hidden");
+  window.__cmp = { X, XN, SN, common, onlyS, onlyX, companyDoc };
 }
 
 // =========================================
 // Boot
 // =========================================
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", ()=>{
   setBranding();
 
-  const boxS = $("boxSintegra");
-  const boxX = $("boxXML");
-  const inpS = $("filesSintegra");
-  const inpX = $("filesXML");
-
+  const boxS = $("boxSintegra"), boxX = $("boxXML");
+  const inpS = $("filesSintegra"), inpX = $("filesXML");
   wireUploadUI(boxS, inpS, "SINTEGRA (.txt)");
   wireUploadUI(boxX, inpX, "XMLs / ZIPs de XML");
 
-  $("compareBtn").addEventListener("click", async () => {
-    try {
+  $("compareBtn").addEventListener("click", async ()=>{
+    try{
       $("compareBtn").disabled = true; $("compareBtn").textContent = "Comparando...";
-      await compareAll(inpS.files[0] || null, inpX.files);
-    } catch (e) {
+      await compareAll(inpS.files[0] || null, inpX.files || [], $("dirFilter").value);
+    } catch(e){
       console.error(e);
       $("warn").textContent = e?.message || "Erro ao comparar.";
     } finally {
@@ -747,14 +721,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  $("resetBtn").addEventListener("click", () => {
-    inpS.value = ""; inpX.value = "";
-    $("warn").textContent = "";
-    $("results").classList.add("hidden");
-    [boxS, boxX].forEach(labelEl => {
+  $("resetBtn").addEventListener("click", ()=>{
+    inpS.value=""; inpX.value="";
+    $("warn").textContent=""; $("results").classList.add("hidden");
+    [boxS,boxX].forEach(labelEl=>{
       const span = labelEl.querySelector("span");
-      labelEl.classList.remove("filled", "dragover");
-      span.innerHTML = (labelEl.id === "boxSintegra")
+      labelEl.classList.remove("filled","dragover");
+      span.innerHTML = (labelEl.id==="boxSintegra")
         ? "<strong>SINTEGRA (.txt)</strong><br><small>Arraste aqui ou clique</small>"
         : "<strong>XMLs / ZIPs de XML</strong><br><small>Entradas e saídas</small>";
     });
