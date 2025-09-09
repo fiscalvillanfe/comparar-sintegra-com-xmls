@@ -1,129 +1,122 @@
-<!doctype html>
-<html lang="pt-br">
-
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
-   <meta charset="utf-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <title>SINTEGRA × XML — Villa Contabilidade</title>
-
-   <!-- Favicon dinâmico (o app.js seta o data URL que você enviou) -->
-   <link id="dynamic-favicon" rel="icon" type="image/png" href="">
-
-   <!-- Estilos -->
-   <link rel="stylesheet" href="style.css">
-
-   <!-- Bibliotecas usadas pelo app.js -->
-   <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
-   <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.5/dist/FileSaver.min.js"></script>
-   <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comparador SINTEGRA × XML - Villa Contabilidade</title>
+  <link rel="stylesheet" href="style.css">
+  <link id="dynamic-favicon" rel="icon" type="image/png" href="">
 </head>
-
 <body>
-   <!-- Topbar -->
-   <header class="topbar">
-      <div class="brand">
-         <!-- Logo dinâmico (app.js seta o mesmo data URL do favicon) -->
-         <img id="brandLogo" class="brand-logo" src="" alt="Logo">
-         <span class="brand-title">SINTEGRA × XML</span>
+  <!-- Barra superior -->
+  <header class="topbar">
+    <div class="brand">
+      <img id="brandLogo" class="brand-logo" alt="Villa Contabilidade">
+      <span class="brand-title">SINTEGRA × XML</span>
+    </div>
+    <nav>
+      <a class="btn link" target="_blank" rel="noopener"
+        href="https://www.nfe.fazenda.gov.br/portal/consultaRecaptcha.aspx?tipoConsulta=resumo&tipoConteudo=7PhJ+gAVw2g%3D">
+        Consulta NF-e SEFAZ
+      </a>
+    </nav>
+  </header>
+
+  <main class="wrapper">
+    <header class="pagehead">
+      <h1>Comparador SINTEGRA × XML</h1>
+      <p class="sub">
+        Envie os arquivos de **Sintegra**, **XMLs** ou **ZIPs de XMLs** (entradas e saídas).<br>
+        O sistema fará a identificação automática e irá comparar os dados.
+      </p>
+    </header>
+
+    <!-- Área de uploads -->
+    <section class="card">
+      <div class="upload-grid">
+        <!-- Upload SINTEGRA -->
+        <label class="file" id="boxSintegra">
+          <input id="filesSintegra" type="file" accept=".txt">
+          <span>
+            <strong>SINTEGRA (.txt)</strong><br>
+            <small>Arraste aqui ou clique</small>
+          </span>
+        </label>
+
+        <!-- Upload XML ou ZIP -->
+        <label class="file" id="boxXML">
+          <input id="filesXML" type="file" multiple accept=".xml,.zip">
+          <span>
+            <strong>XMLs / ZIPs de XML</strong><br>
+            <small>Entradas e saídas</small>
+          </span>
+        </label>
       </div>
 
-      <nav class="top-actions">
-         <a class="btn secondary link" target="_blank" rel="noopener" href="https://www.nfe.fazenda.gov.br/portal/consultaRecaptcha.aspx?tipoConsulta=resumo&tipoConteudo=7PhJ+gAVw2g%3D">
-            Consulta NF-e (SEFAZ)
-         </a>
-      </nav>
-   </header>
-
-   <main class="wrapper">
-      <!-- Cabeçalho da página -->
-      <header class="pagehead">
-         <h1>Comparador SINTEGRA × XML</h1>
-         <p class="sub">
-            Arraste <strong>vários SINTEGRA (.txt/.zip)</strong> e <strong>XMLs/ZIPs</strong> (entradas e saídas misturados).
-            O sistema identifica modelo 55 e compara Nº/Série/Data/Valor.
-         </p>
-      </header>
-
-      <!-- Uploads -->
-      <section class="card">
-         <div class="upload-grid">
-            <label class="file" id="boxS">
-               <input id="filesS" type="file" multiple accept=".txt,.zip">
-               <span>
-                  <strong>SINTEGRA (.txt/.zip)</strong><br>
-                  <small>Arraste aqui ou clique</small>
-               </span>
-            </label>
-
-            <label class="file" id="boxX">
-               <input id="filesX" type="file" multiple accept=".xml,.zip">
-               <span>
-                  <strong>XML/ZIP (NF-e)</strong><br>
-                  <small>Arraste aqui ou clique</small>
-               </span>
-            </label>
-         </div>
-
-         <div class="actions">
-            <button id="compareBtn" class="btn primary">Comparar</button>
-            <button id="resetBtn" class="btn secondary">Limpar</button>
-         </div>
-
-         <!-- Barra de progresso e mensagens -->
-         <div id="progressBar" class="progress hidden">
-            <div class="indeterminate"></div>
-         </div>
-         <p id="warn" class="msg"></p>
-      </section>
-
-      <!-- Resumo e Tabelas -->
-      <section id="summary" class="hidden">
-         <div class="card">
-            <h2>Resumo</h2>
-            <div id="stats" class="stats-grid"></div>
-         </div>
-
-         <div class="card">
-            <h2>Ações</h2>
-            <div class="downloads">
-               <button id="dlExcel" class="btn secondary" disabled>Relatório (Excel)</button>
-               <button id="dlPDF" class="btn secondary" disabled>Relatório p/ cliente (PDF)</button>
-               <button id="viewDiffBtn" class="btn secondary" disabled>Visualizar (DANFE) — diferentes</button>
-            </div>
-         </div>
-
-         <div class="card compact">
-            <h3>Em comum</h3>
-            <div id="tableCommon"></div>
-         </div>
-
-         <div class="card compact">
-            <h3>Só no SINTEGRA</h3>
-            <div id="tableOnlyS"></div>
-         </div>
-
-         <div class="card compact">
-            <h3>Só nos XMLs</h3>
-            <div id="tableOnlyX"></div>
-         </div>
-      </section>
-   </main>
-
-   <!-- Modal de DANFE -->
-   <div id="danfeModal" class="modal hidden" aria-hidden="true">
-      <div class="modal-dialog">
-         <div class="modal-head">
-            <h3>Diferenças — DANFE</h3>
-            <button id="closeDanfe" class="icon-btn" aria-label="Fechar">×</button>
-         </div>
-         <div id="danfeList" class="modal-body">
-            <!-- cartões DANFE preenchidos via app.js -->
-         </div>
+      <div class="actions">
+        <button id="compareBtn" class="btn primary">Comparar</button>
+        <button id="resetBtn" class="btn secondary">Limpar</button>
       </div>
-   </div>
 
-   <!-- Script principal -->
-   <script src="app.js"></script>
+      <!-- Barra de progresso -->
+      <div id="progressBar" class="progress hidden">
+        <div class="indeterminate"></div>
+      </div>
+      <p id="warn" class="msg"></p>
+    </section>
+
+    <!-- Resultados -->
+    <section id="results" class="hidden">
+      <div class="card">
+        <h2>Resumo</h2>
+        <div id="stats" class="stats-grid"></div>
+      </div>
+
+      <div class="card">
+        <h2>Ações</h2>
+        <div class="downloads">
+          <button id="dlExcel" class="btn secondary" disabled>Relatório Excel</button>
+          <button id="dlPDF" class="btn secondary" disabled>Relatório PDF</button>
+          <button id="viewDanfeBtn" class="btn secondary" disabled>Visualizar DANFE</button>
+        </div>
+      </div>
+
+      <!-- Tabelas -->
+      <div class="card compact">
+        <h3>Notas em Comum</h3>
+        <div id="tableCommon"></div>
+      </div>
+
+      <div class="card compact">
+        <h3>Somente no SINTEGRA</h3>
+        <div id="tableOnlySintegra"></div>
+      </div>
+
+      <div class="card compact">
+        <h3>Somente nos XMLs</h3>
+        <div id="tableOnlyXML"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal DANFE -->
+  <div id="danfeModal" class="modal hidden" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-head">
+        <h3>DANFE - Notas Diferentes</h3>
+        <button id="closeDanfe" class="icon-btn" aria-label="Fechar">&times;</button>
+      </div>
+      <div id="danfeList" class="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Bibliotecas necessárias -->
+  <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.5/dist/FileSaver.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <!-- Script principal -->
+  <script src="app.js"></script>
 </body>
-
 </html>
